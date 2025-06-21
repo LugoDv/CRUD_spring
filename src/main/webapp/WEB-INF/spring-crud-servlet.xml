@@ -15,7 +15,7 @@
 		http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 	<!-- Paquete de escaneo de componentes -->
-	<context:component-scan base-package="pildoras.es.controlador" />
+	<context:component-scan base-package="lugo.tech.controller" />
 
 	<!-- Conversión formateo y validación-->
 	<mvc:annotation-driven/>
@@ -30,10 +30,10 @@
     <!-- Origen BBDD y connection pool -->
 	<bean id="myDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
           destroy-method="close">
-        <property name="driverClass" value="com.mysql.jdbc.Driver" />
-        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/gestionpedidoscrud?useSSL=false&amp;serverTimezone=UTC" />
+        <property name="driverClass" value="com.mysql.cj.jdbc.Driver" />
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3307/gestionPedidosCRUD?useSSL=false" />
         <property name="user" value="root" />
-        <property name="password" value="" /> 
+        <property name="password" value="1331" /> 
 
         <!-- Propiedades connection pool para C3P0 -->
         <property name="minPoolSize" value="5" />
