@@ -35,25 +35,26 @@ public class ConectarCRUD extends HttpServlet {
 		// TODO Auto-generated method stub
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
 
-		String url = "jdbc:mysql://localhost:3307/gestionPedidosCRUD";
-		String usario = "root";
-		String password = "1331";
-		
-		String driver = "com.mysql.cj.jdbc.Driver";
+//		String url = "jdbc:mysql://localhost:3307/gestionPedidosCRUD";
+//		String usario = "root";
+//		String password = "1331";
+//		
+//		String driver = "com.mysql.cj.jdbc.Driver";
+//		
 		
 		try {
 			
 			PrintWriter out = response.getWriter();
 			
-			out.println("NOMBRE DE LA BASE DE DATOS: " + url);
+			out.println("NOMBRE DE LA BASE DE DATOS: " );
 			
-			Class.forName(driver);
+		//	Class.forName(driver);
 			
-			Connection conexion = DriverManager.getConnection(url, usario, password);
+			Connection conexion = ConexionDB.obtenerConexion();
 			
 			out.println("Conexión exitosa a la base de datos");
 			
-			conexion.close();
+			ConexionDB.closeConnection(conexion);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
